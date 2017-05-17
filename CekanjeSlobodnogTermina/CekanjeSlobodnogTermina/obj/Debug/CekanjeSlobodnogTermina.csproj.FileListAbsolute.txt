@@ -1,0 +1,22 @@
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\bin\Debug\CekanjeSlobodnogTermina.exe.config
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\bin\Debug\CekanjeSlobodnogTermina.exe
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\bin\Debug\CekanjeSlobodnogTermina.pdb
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.MainForm.resources
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.Properties.Resources.resources
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.csproj.GenerateResource.Cache
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.exe
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.pdb
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\Interop.WMPLib.dll
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.csproj.ResolveComReference.cache
+C:\Users\Marko Grbic\Desktop\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.csprojResolveAssemblyReference.cache
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\bin\Debug\CekanjeSlobodnogTermina.exe.config
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\Interop.WMPLib.dll
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.csproj.ResolveComReference.cache
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.exe
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.pdb
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\bin\Debug\CekanjeSlobodnogTermina.exe
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\bin\Debug\CekanjeSlobodnogTermina.pdb
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.csprojResolveAssemblyReference.cache
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.MainForm.resources
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.Properties.Resources.resources
+Z:\Moji_Folderi\CekanjeSlobodnogTermina\CekanjeSlobodnogTermina\obj\Debug\CekanjeSlobodnogTermina.csproj.GenerateResource.Cache
