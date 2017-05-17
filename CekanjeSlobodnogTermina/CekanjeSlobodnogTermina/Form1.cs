@@ -1,6 +1,9 @@
 ﻿using CekanjeSlobodnogTermina.Properties;
 using System;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -82,7 +85,7 @@ namespace CekanjeSlobodnogTermina
             serachWebsiteTimer.Start();
             serachWebsiteTimer_Tick(null,null);
 
-            setStartUpLocation();           
+            setStartUpLocation();                 
         }
 
         private void serachWebsiteTimer_Tick(object sender, EventArgs e)
