@@ -13,8 +13,6 @@ namespace CekanjeSlobodnogTermina
     public partial class MainForm : Form
     {
         WebBrowser chrome;
-        WebBrowser fireFox;
-        WebBrowser opera;
 
         System.Windows.Forms.Timer serachWebsiteTimer = new System.Windows.Forms.Timer();
         System.Windows.Forms.Timer waitTimer = new System.Windows.Forms.Timer();
@@ -97,65 +95,74 @@ namespace CekanjeSlobodnogTermina
 
         private void chrome_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            try
-            {
-                ((WebBrowser)sender).Document.GetElementsByTagName("input").GetElementsByName("korisnickoIme")[0].SetAttribute("value", "E3 107/2014");
-                ((WebBrowser)sender).Document.GetElementsByTagName("input").GetElementsByName("lozinka")[0].SetAttribute("value", "sifrazagim");
 
-                foreach (HtmlElement item in ((WebBrowser)sender).Document.GetElementsByTagName("input"))
-                {
-                    if (item.GetAttribute("value") == "Prijava")
+            switch (((WebBrowser)sender).Url.ToString())
+            {
+                case "http://gim.ftn.uns.ac.rs/Prijava":
                     {
-                        item.InvokeMember("click");
-                        break;
+                        StreamReader sr = new StreamReader("userpass.txt");
+
+                        ((WebBrowser)sender).Document.GetElementsByTagName("input").GetElementsByName("korisnickoIme")[0].SetAttribute("value", sr.ReadLine());
+                        ((WebBrowser)sender).Document.GetElementsByTagName("input").GetElementsByName("lozinka")[0].SetAttribute("value", sr.ReadLine());
+
+                        sr.Close();
+
+                        foreach (HtmlElement item in ((WebBrowser)sender).Document.GetElementsByTagName("input"))
+                        {
+                            if (item.GetAttribute("value") == "Prijava")
+                            {
+                                item.InvokeMember("click");
+                                break;
+                            }
+                        }
                     }
-                }                
-            }
-            catch
-            {
-                fireFox = new WebBrowser();
-                fireFox.Navigate("http://gim.ftn.uns.ac.rs/IzmenaZakazanogTermina");
-                fireFox.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(fireFox_DocumentCompleted);
-            }
-        }
+                    break;
 
-        private void fireFox_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            string lastDate = "";
+                case "http://gim.ftn.uns.ac.rs/Index":
+                    {
+                        chrome.Navigate("http://gim.ftn.uns.ac.rs/IzmenaZakazanogTermina");
+                    }
+                    break;
 
-            foreach (HtmlElement item in ((WebBrowser)sender).Document.GetElementsByTagName("select").GetElementsByName("datum")[0].All)
-            {
-                lastDate = item.GetAttribute("value");
-            }
+                case "http://gim.ftn.uns.ac.rs/IzmenaZakazanogTermina":
+                    {
+                        string lastDate = "";
 
-            dateLabel.Text = lastDate.Replace('.','/');
+                        foreach (HtmlElement item in ((WebBrowser)sender).Document.GetElementsByTagName("select").GetElementsByName("datum")[0].All)
+                        {
+                            lastDate = item.GetAttribute("value");
+                        }
 
-            opera = new WebBrowser();
-            opera.Navigate("http://gim.ftn.uns.ac.rs/IzmenaZakazanogTermina?nastavnik=1&datum=" + lastDate);
-            opera.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(opera_DocumentCompleted);            
-        }
+                        dateLabel.Text = lastDate.Replace('.', '/');
+                        
+                        chrome.Navigate("http://gim.ftn.uns.ac.rs/IzmenaZakazanogTermina?nastavnik=1&datum=" + lastDate);
+                    }
+                    break;
 
-        private void opera_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            bool foundSpanMessage = false;
+                default:
+                    {
+                        bool foundSpanMessage = false;
 
-            foreach(var value in ((WebBrowser)sender).Document.GetElementsByTagName("span"))
-            {
-                if (((HtmlElement)value).InnerText.Contains("zauzeti"))
-                    foundSpanMessage = true;                
-            }
+                        foreach (var value in ((WebBrowser)sender).Document.GetElementsByTagName("span"))
+                        {
+                            if (((HtmlElement)value).InnerText.Contains("zauzeti"))
+                                foundSpanMessage = true;
+                        }
 
-            if (!foundSpanMessage)
-            {
-                waitTimer.Stop();
-                statusLabel.TextAlign = ContentAlignment.MiddleCenter;
+                        if (!foundSpanMessage)
+                        {
+                            waitTimer.Stop();
+                            statusLabel.TextAlign = ContentAlignment.MiddleCenter;
 
-                System.Windows.Forms.Timer waitTimer2 = new System.Windows.Forms.Timer();
-                waitTimer2.Tick += new EventHandler(waitTimer2_Tick);
-                waitTimer2.Interval = 1000;
-                waitTimer2.Start();
+                            System.Windows.Forms.Timer waitTimer2 = new System.Windows.Forms.Timer();
+                            waitTimer2.Tick += new EventHandler(waitTimer2_Tick);
+                            waitTimer2.Interval = 1000;
+                            waitTimer2.Start();
 
-                statusLabel.Text = "Found available appointment!";
+                            statusLabel.Text = "Found available appointment!";
+                        }
+                    }
+                    break;
             }
         }
 
